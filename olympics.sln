@@ -10,6 +10,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "notes", "notes", "{EBEDFC88
 		1807-scrum.txt = 1807-scrum.txt
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "olympics-service", "olympics-service\olympics-service.csproj", "{5E0DD270-9299-46A8-93FF-3CB7C467344D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "olympics-service-test", "olympics-service-test\olympics-service-test.csproj", "{77EA7339-B8CF-4333-8442-59B2358353D8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,6 +24,14 @@ Global
 		{8449A148-4FA1-4E48-9E76-7F5DDA640AE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8449A148-4FA1-4E48-9E76-7F5DDA640AE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8449A148-4FA1-4E48-9E76-7F5DDA640AE9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E0DD270-9299-46A8-93FF-3CB7C467344D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E0DD270-9299-46A8-93FF-3CB7C467344D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E0DD270-9299-46A8-93FF-3CB7C467344D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E0DD270-9299-46A8-93FF-3CB7C467344D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77EA7339-B8CF-4333-8442-59B2358353D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77EA7339-B8CF-4333-8442-59B2358353D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77EA7339-B8CF-4333-8442-59B2358353D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77EA7339-B8CF-4333-8442-59B2358353D8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

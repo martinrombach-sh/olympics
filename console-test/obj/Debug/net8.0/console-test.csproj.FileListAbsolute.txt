@@ -1,0 +1,15 @@
+/Users/martin/Code/olympics/console-test/bin/Debug/net8.0/console-test
+/Users/martin/Code/olympics/console-test/bin/Debug/net8.0/console-test.deps.json
+/Users/martin/Code/olympics/console-test/bin/Debug/net8.0/console-test.runtimeconfig.json
+/Users/martin/Code/olympics/console-test/bin/Debug/net8.0/console-test.dll
+/Users/martin/Code/olympics/console-test/bin/Debug/net8.0/console-test.pdb
+/Users/martin/Code/olympics/console-test/obj/Debug/net8.0/console-test.GeneratedMSBuildEditorConfig.editorconfig
+/Users/martin/Code/olympics/console-test/obj/Debug/net8.0/console-test.AssemblyInfoInputs.cache
+/Users/martin/Code/olympics/console-test/obj/Debug/net8.0/console-test.AssemblyInfo.cs
+/Users/martin/Code/olympics/console-test/obj/Debug/net8.0/console-test.csproj.CoreCompileInputs.cache
+/Users/martin/Code/olympics/console-test/obj/Debug/net8.0/console-test.sourcelink.json
+/Users/martin/Code/olympics/console-test/obj/Debug/net8.0/console-test.dll
+/Users/martin/Code/olympics/console-test/obj/Debug/net8.0/refint/console-test.dll
+/Users/martin/Code/olympics/console-test/obj/Debug/net8.0/console-test.pdb
+/Users/martin/Code/olympics/console-test/obj/Debug/net8.0/console-test.genruntimeconfig.cache
+/Users/martin/Code/olympics/console-test/obj/Debug/net8.0/ref/console-test.dll

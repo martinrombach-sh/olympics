@@ -1,0 +1,37 @@
+<mxfile host="Electron" modified="2024-07-22T21:46:43.997Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/22.1.2 Chrome/114.0.5735.289 Electron/25.9.4 Safari/537.36" etag="E9y_sZfBcytAXgHFe2NY" version="22.1.2" type="device">
+  <diagram name="Page-1" id="p0_WUYd_ZG-w-QHvvuTH">
+    <mxGraphModel dx="1245" dy="676" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="lfVr1bBJkyUn_FtHo4eJ-1" value="What are you building?" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="60" y="30" width="140" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="zLIym83Cw20W92eZ6iOA-2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="lfVr1bBJkyUn_FtHo4eJ-2" target="zLIym83Cw20W92eZ6iOA-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lfVr1bBJkyUn_FtHo4eJ-2" value="API" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="305" y="200" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="zLIym83Cw20W92eZ6iOA-4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="lfVr1bBJkyUn_FtHo4eJ-3" target="zLIym83Cw20W92eZ6iOA-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lfVr1bBJkyUn_FtHo4eJ-3" value="SQL Db local" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="490" y="200" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="lfVr1bBJkyUn_FtHo4eJ-5" value="console app to call it, or postman to call it" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="130" y="200" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="lfVr1bBJkyUn_FtHo4eJ-6" value="free tier?" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="510" y="150" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="zLIym83Cw20W92eZ6iOA-1" value="auto build web api" style="whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="305" y="340" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="zLIym83Cw20W92eZ6iOA-3" value="local, follow tutorial, add via sql management studio if you can?" style="whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="490" y="340" width="150" height="110" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

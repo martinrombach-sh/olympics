@@ -1,0 +1,76 @@
+Build an API to create datasets in Microsoft Server
+
+1. Define a connection to an MS SQL server in the Azure Docker (use .NET)
+installed sql server ->
+dotnet add package microsoft.data.sqlclient
+
+installed entity framework ->
+dotnet add package microsoft.entityframeworkcore
+
+if you want to add dapper later->
+dotnet add package Dapper 
+
+test entity framework's ability to create database tables 
+
+installed configuration and configuration json->
+dotnet add package microsoft.extensions.configuration microsoft.extensions.configuration.json
+
+appsettings.json added to '/olympic-insights/bin/Debug/net8.0/appsettings.json' to be seen by entity framework
+
+entity framework ->
+source of truth - model
+code first approach (recommended for ef)
+
+to do
+√ 1. New SQL container called 'olympic_history' or 'olympics_data' with Microsoft SQL server installed. 
+
+Create and Run a container for the Image:
+docker run -e "ACCEPT_EULA=1" -e "MSSQL_USER=SA" -e "MSSQL_SA_PASSWORD=SQLConnect1" -e "MSSQL_PID=Developer" -p 1433:1433 -d --name=sql_connect mcr.microsoft.com/azure-sql-edge
+
+breakdown:
+-e "ACCEPT_EULA=1"  -> accept license agreement
+-e "MSSQL_USER=SA" -e "MSSQL_SA_PASSWORD=SQLConnect1"  -> set username and password
+-e "MSSQL_PID=Developer" -> set type of database
+-p 1433:1433 -> set port
+-d --name=sql_connect mcr.microsoft.com/azure-sql-edge -> set name
+
+2. Create a database in the container using EF (model as source of truth, code first)
+- when successful, you'll see an empty table of athletes
+
+breakdown:
+1. create a class that extends db context
+2. install the extension for the database you want to use (e.g. 
+dotnet add package Microsoft.EntityFrameworkCore.SqlServer)
+
+next: add connection in program.cs (see contoso project)
+!bug! - ASP.NET Core Web API - The name 'WebApplication' does not exist in the current context WebApi
+this bug appeared in Program.cs next to this line: var builder = WebApplication.CreateBuilder(args);
+
+https://stackoverflow.com/questions/71800753/asp-net-core-web-api-the-name-webapplication-does-not-exist-in-the-current-c
+√ Solved: update csproj file:
+From: <Project Sdk="Microsoft.NET.Sdk">
+To: <Project Sdk="Microsoft.NET.Sdk.Web">
+This defines your app as a web application.
+Note: you used 'dotnet new console -o' i.e the console template when starting. 
+Maybe you should be using the web app template? 
+
+Next:
+
+√define connection as environment variable
+
+
+create the database using the migration
+1. add the migration to the project 
+
+- get connection string usually takes a direct string. if you were to hard code this, it would probably work.
+√sub goal: console app logging environment variable
+
+Generated environment variable and passed to db context.
+
+!bug!
+An error occurred while accessing the Microsoft.Extensions.Hosting services. Continuing without the application service provider. Error: The entity type 'OlympicContext' was not found. Ensure that the entity type has been added to the model.
+
+2. create db and schema in container db using migration + connection
+
+NEXT: 
+

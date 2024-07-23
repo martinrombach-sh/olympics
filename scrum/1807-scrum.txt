@@ -1,0 +1,26 @@
+API, HTTP calls to a database
+
+A frontend that searches for olympics information
+125 years of summer olympics
+Interface between the db and the api with an orm (i.e. entity framework)
+
+Slices of Data:
+Year
+Athlete
+Location
+Sport
+
+Focus on DB
+
+Entity, MS SQL .NET, IIS, React or Blazor, Use Third Normal Form
+Maybe you should do entity and swagger?
+
+can you do everything local? how would you play with azure / automation?
+don't worry -> key is classes and tests anyway
+
+What's next:
+
+set up database
+
+console app for testing is fine for now, move into unit tests long term
+

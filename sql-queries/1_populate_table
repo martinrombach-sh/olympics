@@ -1,0 +1,45 @@
+CREATE DATABASE olympics
+
+CREATE TABLE athlete_events (
+    id int NOT NULL PRIMARY KEY,
+    name varchar(255),
+    sex char,
+    age int,
+    height int,
+    weight int, 
+    team varchar(50),
+    noc varchar(10),
+    games varchar(50),
+    year int,
+    season varchar(50),
+    city varchar(50),
+    sport varchar(255),
+    event varchar(400),
+    medal varchar(50)
+)
+
+-- where's the path? 'placeholder-data/athlete_events.csv'
+
+USE olympics 
+
+BULK INSERT athletes_events
+FROM 'placeholder-data/athlete_events.csv'
+WITH
+(
+    FORMAT = 'CSV',
+    FIRSTROW = 2
+
+
+)
+GO
+
+USE olympics 
+SELECT TOP 100 * FROM athlete_events
+
+--incorrect syntax near load
+--LOAD DATA INFILE 'placeholder-data/athlete_events.csv'
+--INTO TABLE athlete_events
+--FIELDS TERMINATED BY ','
+--ENCLOSED BY '"'
+--LINES TERMINATED BY '\n'
+--IGNORE 1 ROWS;

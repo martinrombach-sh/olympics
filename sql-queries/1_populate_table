@@ -1,5 +1,7 @@
 CREATE DATABASE olympics
 
+USE olympics
+
 CREATE TABLE athlete_events (
     id int NOT NULL PRIMARY KEY,
     name varchar(255),
@@ -18,28 +20,16 @@ CREATE TABLE athlete_events (
     medal varchar(50)
 )
 
--- where's the path? 'placeholder-data/athlete_events.csv'
 
-USE olympics 
+-- best to import from file than try to use SQL
+USE olympics
+DROP TABLE athlete_events
+-- table imported via SQL Server Import, original table must be dropped.
 
-BULK INSERT athletes_events
-FROM 'placeholder-data/athlete_events.csv'
-WITH
-(
-    FORMAT = 'CSV',
-    FIRSTROW = 2
-
-
-)
-GO
+--importation notes:
+-- age, height and weight were auto imported as tiny ints, but include value NA so were changed to nvarchar
+-- name and event were auto imported with nvarchar(50), but needed nvarchar(300)
 
 USE olympics 
 SELECT TOP 100 * FROM athlete_events
 
---incorrect syntax near load
---LOAD DATA INFILE 'placeholder-data/athlete_events.csv'
---INTO TABLE athlete_events
---FIELDS TERMINATED BY ','
---ENCLOSED BY '"'
---LINES TERMINATED BY '\n'
---IGNORE 1 ROWS;

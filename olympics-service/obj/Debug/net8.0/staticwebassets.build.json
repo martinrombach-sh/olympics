@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "ykjwBBecXwloBE8U6fwT9PcSICqhvEXsfiYepU4TEM4=",
+  "Source": "olympics-service",
+  "BasePath": "_content/olympics-service",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

@@ -1,0 +1,16 @@
+/*
+Slices of Data:
+Year -> get-year-range
+Athlete -> get-athlete-by-name
+Location -> get-location-history
+Sport -> get-sport-history
+
+Entity Framework or Swagger
+(db already exists, so go db first either way)
+
+Can you use different array types? Might be good practice
+(dictionary, IEnumerable, array, list)
+
+MVC
+
+*/

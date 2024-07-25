@@ -1,7 +1,10 @@
 namespace OlympicsAPI
 {
     //the model is partial because it is good practice to have the ability to add to them on the fly from inside another file.
-    public partial class TestUsers()
+
+    //it's important to use singular naming
+    //this isnt the users model, its the user model
+    public partial class TestUser()
     {
         public int UserId { get; set; }
 

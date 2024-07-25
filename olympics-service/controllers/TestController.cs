@@ -23,13 +23,32 @@ public class TestController : ControllerBase
     {
         return _dapper.LoadDataSingle<DateTime>("SELECT GETDATE()");
     }
-
-    //Get argument example
-    [HttpGet("endpoint/{testValue}")]
-    //public IActionResult Test()
-    public string[] Test(string testValue)
+    /*
+    [HttpGet("GetSingleUser/{userId}")]
+    //returns a user model instance
+    public TestUser GetSingleUser(int userId)
     {
-        string[] result = new string[] { "test1", "test2", "test3", testValue };
-        return result;
+
     }
+    */
+    [HttpGet("GetUsers")]
+    //returns an array of model instances
+    public IEnumerable<TestUser> GetUsers()
+    {
+        //@" = multiline string
+        string sql = @"
+            SELECT [UserId],
+                [FirstName],
+                [LastName],
+                [Email],
+                [Gender],
+                [Active] 
+            FROM TutorialAppSchema.Users";
+
+        //DATA HERE: sql is fed into query method and returned as users
+        IEnumerable<TestUser> users = _dapper.LoadData<TestUser>(sql);
+        return users;
+    }
+
+
 }

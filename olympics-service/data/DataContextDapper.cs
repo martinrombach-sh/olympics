@@ -15,20 +15,23 @@ namespace OlympicsAPI
         }
         public IEnumerable<T> LoadData<T>(string sql)
         {
-            IDbConnection dbConnection = new SqlConnection(_config.GetConnectionString("DefaultConnection"));
+            //IDbConnection dbConnection = new SqlConnection(_config.GetConnectionString("DefaultConnection"));
+            IDbConnection dbConnection = new SqlConnection(_config.GetConnectionString("TestConnection"));
             return dbConnection.Query<T>(sql);
         }
 
         public T LoadDataSingle<T>(string sql)
         {
-            IDbConnection dbConnection = new SqlConnection(_config.GetConnectionString("DefaultConnection"));
+            //IDbConnection dbConnection = new SqlConnection(_config.GetConnectionString("DefaultConnection"));
+            IDbConnection dbConnection = new SqlConnection(_config.GetConnectionString("TestConnection"));
             return dbConnection.QuerySingle<T>(sql);
         }
 
         public int ExecuteSqlWithRowCount(string sql)
         {
             //An execute sql call returns the rows affected as a result 
-            IDbConnection dbConnection = new SqlConnection(_config.GetConnectionString("DefaultConnection"));
+            //IDbConnection dbConnection = new SqlConnection(_config.GetConnectionString("DefaultConnection"));
+            IDbConnection dbConnection = new SqlConnection(_config.GetConnectionString("TestConnection"));
             return dbConnection.Execute(sql);
         }
 
@@ -36,7 +39,8 @@ namespace OlympicsAPI
         {
             //This query returns a bool based on the response (200 true, 404 false) which can 
             //be useful if you don't need the rows
-            IDbConnection dbConnection = new SqlConnection(_config.GetConnectionString("DefaultConnection"));
+            //IDbConnection dbConnection = new SqlConnection(_config.GetConnectionString("DefaultConnection"));
+            IDbConnection dbConnection = new SqlConnection(_config.GetConnectionString("TestConnection"));
             return dbConnection.Execute(sql) > 0;
         }
     }

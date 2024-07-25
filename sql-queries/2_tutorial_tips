@@ -1,7 +1,7 @@
 USE DotNetCourseDatabase
 GO
 
-
+-- GetUser, GetUsers
 SELECT * FROM TutorialAppSchema.Users
 -- from this point, hold CTRL and press space in the pixel after the * to autofill with individual fields
 -- what's the problem with this shortcut? is it mapped to a macbook one?
@@ -23,3 +23,12 @@ SELECT [UserId],
 [Department] FROM TutorialAppSchema.UserJobInfo
 SELECT [UserId],
 [Salary] FROM TutorialAppSchema.UserSalary
+
+-- Edit User, Add User
+UPDATE TutorialAppSchema.Users
+    SET [FirstName] = 'steve',
+        [LastName] = 'jobs',
+        [Email] = 'steve@apple.com',
+        [Gender] = 'male',
+        [Active] = 1
+        WHERE UserId = 1 

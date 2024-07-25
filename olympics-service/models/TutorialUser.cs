@@ -4,7 +4,7 @@ namespace OlympicsAPI
 
     //it's important to use singular naming
     //this isnt the users model, its the user model
-    public partial class TestUser()
+    public partial class TutorialUser()
     {
         public int UserId { get; set; }
 
@@ -16,6 +16,7 @@ namespace OlympicsAPI
         public string Email { get; set; } = "";
         public string Gender { get; set; } = "";
         public bool Active { get; set; }
+        //invalid column name 'true'
 
     }
 }

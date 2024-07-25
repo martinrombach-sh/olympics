@@ -1,7 +1,7 @@
 namespace OlympicsAPI
 {
 
-    public partial class TestUserJobInfo()
+    public partial class TutorialUserJobInfo()
     {
         public int UserId { get; set; }
         public string JobTitle { get; set; } = "";

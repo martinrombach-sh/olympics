@@ -1,0 +1,25 @@
+USE DotNetCourseDatabase
+GO
+
+
+SELECT * FROM TutorialAppSchema.Users
+-- from this point, hold CTRL and press space in the pixel after the * to autofill with individual fields
+-- what's the problem with this shortcut? is it mapped to a macbook one?
+
+--Solution:
+-- Save queries need to be copied into a new query to actually hit the db.
+-- this acts in the same way, so if its not working, try making a new query.
+
+SELECT [UserId],
+[FirstName],
+[LastName],
+[Email],
+[Gender],
+[Active] FROM TutorialAppSchema.Users
+
+
+SELECT [UserId],
+[JobTitle],
+[Department] FROM TutorialAppSchema.UserJobInfo
+SELECT [UserId],
+[Salary] FROM TutorialAppSchema.UserSalary

@@ -47,9 +47,21 @@
               "target": "Package",
               "version": "[8.0.2, )"
             },
+            "Microsoft.Data.SqlClient": {
+              "target": "Package",
+              "version": "[5.2.1, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.4.0, )"
+            },
+            "automapper": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            },
+            "dapper": {
+              "target": "Package",
+              "version": "[2.1.35, )"
             }
           },
           "imports": [

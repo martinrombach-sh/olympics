@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace DotnetAPI.Controllers;
+namespace OlympicsAPI.Controllers;
 
 [ApiController]
 [Route("[controller]")] //
@@ -12,9 +12,16 @@ namespace DotnetAPI.Controllers;
 
 public class TestController : ControllerBase
 {
-    public TestController()
+    DataContextDapper _dapper;
+    public TestController(IConfiguration config)
     {
+        _dapper = new DataContextDapper(config);
+    }
 
+    [HttpGet("TestConnection")]
+    public DateTime TestConnection()
+    {
+        return _dapper.LoadDataSingle<DateTime>("SELECT GETDATE()");
     }
 
     //Get argument example

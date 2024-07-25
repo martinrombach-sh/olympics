@@ -1,4 +1,4 @@
-/*
+
 Slices of Data:
 Year -> get-year-range
 Athlete -> get-athlete-by-name
@@ -13,4 +13,12 @@ Can you use different array types? Might be good practice
 
 MVC
 
-*/
+AddSingleton( ): Registers a service with a singleton lifetime, meaning the same instance is used for every request throughout the application’s lifetime.
+AddScoped( ): Registers a service with a scoped lifetime, meaning a new instance is created once per client request.
+AddTransient( ): Registers a service with a transient lifetime, meaning a new instance is created each time the service is requested.
+
+Connection Steps:
+	- Add a connection string (appsettings.json)
+	- Pass Iconfiguration config to the controller
+    (in the work controllers, there are various configuration interfaces passed rather than a simple Iconfiguration)
+    - adding a few libraries: dotnet add package dapper, automapper, Microsoft.Data.SqlClient

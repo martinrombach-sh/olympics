@@ -1,0 +1,19 @@
+Just a quick reminder for MacOS and Linux students:
+In the next lecture, and lectures to come, we will be using "Windows Authentication" in the video, but this will only work on Windows OS.
+Please continue to use SQL Authentication and provide a Username and Password that we used in the install video instead.
+
+If you used the same credentials as me in the install video, they will be as follows:
+UserName: sa
+Password: SQLConnect1
+
+For connection strings you will also need to set Trusted_Connection to false and supply a UserName and Password:
+Server=localhost;Database=DotNetCourseDatabase;Trusted_Connection=false;TrustServerCertificate=True;User Id=sa;Password=SQLConnect1;
+
+Thank You, and I will see you in the next lecture!
+Dominic
+
+-----> Why is this? What's going on in this? Is it important to learn?
+
+Data Contexts ->
+You should have both the dapper and entity framework approaches.
+You should also try olympics 2 with a code first approach that maps the tables from the code.

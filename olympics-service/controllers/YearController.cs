@@ -1,30 +1,32 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace DotnetAPI.Controllers;
-
-[ApiController]
-[Route("[controller]")]
-public class YearController : ControllerBase
+namespace OlympicsAPI.Controllers
 {
-    public YearController()
-    {
 
-    }
-
-    [HttpGet("/")]
-    //public IActionResult Test()
-    public string Year(string year)
+    [ApiController]
+    [Route("[controller]")]
+    public class YearController : ControllerBase
     {
-        string result = year;
-        return result;
-    }
+        public YearController()
+        {
 
-    //Get argument example
-    [HttpGet("/{range}")]
-    //public IActionResult Test()
-    public string YearRange(string range)
-    {
-        string result = range;
-        return result;
+        }
+
+        [HttpGet("/")]
+        //public IActionResult Test()
+        public string Year(string year)
+        {
+            string result = year;
+            return result;
+        }
+
+        //Get argument example
+        [HttpGet("/{range}")]
+        //public IActionResult Test()
+        public string YearRange(string range)
+        {
+            string result = range;
+            return result;
+        }
     }
 }

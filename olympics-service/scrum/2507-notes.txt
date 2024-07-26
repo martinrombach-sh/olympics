@@ -16,4 +16,4 @@ Dominic
 
 Data Contexts ->
 You should have both the dapper and entity framework approaches.
-You should also try olympics 2 with a code first approach that maps the tables from the code.
+You should also try olympics 2 with a code first approach that maps the tables from the code. 

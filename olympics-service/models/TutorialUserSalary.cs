@@ -1,4 +1,4 @@
-namespace OlympicsAPI
+namespace OlympicsAPI.Models
 {
 
     public partial class TutorialUserSalary()

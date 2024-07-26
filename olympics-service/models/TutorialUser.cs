@@ -1,4 +1,4 @@
-namespace OlympicsAPI
+namespace OlympicsAPI.Models
 {
     //the model is partial because it is good practice to have the ability to add to them on the fly from inside another file.
 

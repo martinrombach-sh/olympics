@@ -2,12 +2,14 @@ using System.Data;
 using Dapper;
 using Microsoft.Data.SqlClient;
 
-namespace OlympicsAPI
+namespace OlympicsAPI.Data
 {
     public class DataContextDapper
     {
+        //Config object defines the connection settings etc
         private readonly IConfiguration _config;
 
+        //Data context = central entity framework / dapper class, contains all methods/classes
         public DataContextDapper(IConfiguration config)
         {
             _config = config;

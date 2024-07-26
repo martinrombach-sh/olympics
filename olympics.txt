@@ -1,9 +1,0 @@
-Manage solutions using Solution Explorer in VS Code:
-https://code.visualstudio.com/docs/csharp/project-management 
-
-To do:
-
-1. Review original docs
-2. Move API into solution structure
-3. Structure, code and test (unit tests are most important)
-

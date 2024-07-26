@@ -1,9 +1,13 @@
 using Microsoft.AspNetCore.Mvc;
+using OlympicsAPI.Data;
+using OlympicsAPI.Dtos;
+using OlympicsAPI.Models;
 
+//if you don't add the sub name space (the suffix Controllers), your file will waste memory loading the entire namespace
 namespace OlympicsAPI.Controllers;
 
 [ApiController]
-[Route("[controller]")] //
+[Route("[controller]")]
 
 //To use, we need builder.Services.AddControllers();
 //and app.MapControllers(); in Program.cs
@@ -16,11 +20,31 @@ public class TutorialController : ControllerBase
         _dapper = new DataContextDapper(config);
     }
 
-    [HttpGet("TutorialConnection")]
+    [HttpGet("GetDate")]
     public DateTime TutorialConnection()
     {
         return _dapper.LoadDataSingle<DateTime>("SELECT GETDATE()");
     }
+
+    [HttpGet("GetUsers")]
+    //returns an array of model instances
+    public IEnumerable<TutorialUser> GetUsers()
+    {
+        //@" = multiline string
+        string sql = @"
+            SELECT [UserId],
+                [FirstName],
+                [LastName],
+                [Email],
+                [Gender],
+                [Active] 
+            FROM TutorialAppSchema.Users";
+
+        //DATA HERE: users is populated with result of dapper query, using sql above
+        IEnumerable<TutorialUser> users = _dapper.LoadData<TutorialUser>(sql);
+        return users;
+    }
+
 
     [HttpGet("GetSingleUser/{userId}")]
     //returns a user model instance
@@ -43,24 +67,6 @@ public class TutorialController : ControllerBase
     }
 
 
-    [HttpGet("GetUsers")]
-    //returns an array of model instances
-    public IEnumerable<TutorialUser> GetUsers()
-    {
-        //@" = multiline string
-        string sql = @"
-            SELECT [UserId],
-                [FirstName],
-                [LastName],
-                [Email],
-                [Gender],
-                [Active] 
-            FROM TutorialAppSchema.Users";
-
-        //DATA HERE: users is populated with result of dapper query, using sql above
-        IEnumerable<TutorialUser> users = _dapper.LoadData<TutorialUser>(sql);
-        return users;
-    }
 
     [HttpPut("EditUser")]
     public IActionResult EditUser(TutorialUser tutorialUser)
@@ -99,7 +105,7 @@ public class TutorialController : ControllerBase
     }
 
     [HttpPost("AddUser")]
-    public IActionResult AddUser(TutorialUser tutorialUser)
+    public IActionResult AddUser(TutorialUserDto tutorialUser)
     {
         string sql = @"INSERT INTO TutorialAppSchema.Users(
         [FirstName],
@@ -113,6 +119,7 @@ public class TutorialController : ControllerBase
             "', '" + tutorialUser.Gender +
             "', '" + tutorialUser.Active +
             "')";
+
         //TIP! If you are having trouble with SQL in here, 
         //console log the sql in the console and then run it in your SQL client.
         //You'll see the results quickly.
@@ -124,5 +131,18 @@ public class TutorialController : ControllerBase
         }
 
         throw new Exception("Failed to add user.");
+    }
+
+    [HttpDelete("DeleteTutorialUser/{userId}")]
+    public IActionResult DeleteUser(int userId)
+    {
+        string sql = "DELETE FROM TutorialAppSchema.Users WHERE UserId = " + userId.ToString();
+
+        if (_dapper.ExecuteSql(sql))
+        {
+            return Ok();
+        }
+
+        throw new Exception("Failed to update user.");
     }
 }

@@ -1,3 +1,6 @@
+using OlympicsAPI.Data;
+using OlympicsAPI.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
@@ -25,6 +28,8 @@ builder.Services.AddCors((options) =>
              });
 
     });
+    //KEY - Creating an link between the interface that models call and the base repository class
+    builder.Services.AddScoped<TutorialIUserRepository, TutorialUserRepository>();
 
 var app = builder.Build();
 if (app.Environment.IsDevelopment())

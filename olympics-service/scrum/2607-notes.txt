@@ -1,0 +1,21 @@
+Basics (CRUD implemented)
+
+API -> finish intermediate
+
+Intermediate Concepts
+
+- Entity Framework
+(API Course -> Mosh's course)
+
+Repository Flow / Repository Pattern (API and Mosh):
+Goal is to create a generic type of 'model' that gets passed in as an argument to an endpoint. (true?)
+
+- reusable, minimises duplicate query logic
+- decouples your application from a persistence framework (e.g. EF, in case you need to change)
+- promotes testing
+Mosh 72, 73
+API 77-80
+
+Side Note: James showed you the procedure for pull requests today, do you remember?
+setup is... hazy?
+review is ok

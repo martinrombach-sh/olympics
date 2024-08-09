@@ -12,17 +12,13 @@ namespace OlympicsAPI.Controllers;
 
 //To use, we need builder.Services.AddControllers();
 //and app.MapControllers(); in Program.cs
-public class TutorialEFController : ControllerBase
+public class TutorialEFControllerRaw : ControllerBase
 {
     DataContextEF _entityFramework;
     IMapper _mapper;
-
-    TutorialIUserRepository _userRepository;
-    public TutorialEFController(IConfiguration config, TutorialIUserRepository userRepository)
+    public TutorialEFControllerRaw(IConfiguration config)
     {
         _entityFramework = new DataContextEF(config);
-
-        _userRepository = userRepository;
 
         _mapper = new Mapper(new MapperConfiguration(cfg =>
         {
@@ -79,7 +75,7 @@ public class TutorialEFController : ControllerBase
             userDb.Gender = tutorialUser.Gender;
         }
 
-        if (_userRepository.SaveChanges())
+        if (_entityFramework.SaveChanges() > 0)
         {
             return Ok();
         }
@@ -101,8 +97,8 @@ public class TutorialEFController : ControllerBase
         TutorialUser userDb = _mapper.Map<TutorialUser>(tutorialUser);
 
         //EF updates the db
-        _userRepository.AddEntity<TutorialUser>(userDb);
-        if (_userRepository.SaveChanges())
+        _entityFramework.Add(userDb);
+        if (_entityFramework.SaveChanges() > 0)
         {
             return Ok();
         }
@@ -118,8 +114,8 @@ public class TutorialEFController : ControllerBase
 
         if (userDb != null)
         {
-            _userRepository.RemoveEntity<TutorialUser>(userDb);
-            if (_userRepository.SaveChanges())
+            _entityFramework.TutorialUsers.Remove(userDb);
+            if (_entityFramework.SaveChanges() > 0)
             {
                 return Ok();
             }
@@ -143,8 +139,8 @@ public class TutorialEFController : ControllerBase
     [HttpPost("TutorialUserSalary")]
     public IActionResult PostTutorialUserSalaryEf(TutorialUserSalary TutorialUserForInsert)
     {
-        _userRepository.AddEntity<TutorialUserSalary>(TutorialUserForInsert);
-        if (_userRepository.SaveChanges())
+        _entityFramework.TutorialUserSalary.Add(TutorialUserForInsert);
+        if (_entityFramework.SaveChanges() > 0)
         {
             return Ok();
         }
@@ -162,7 +158,7 @@ public class TutorialEFController : ControllerBase
         if (TutorialUserToUpdate != null)
         {
             _mapper.Map(TutorialUserForUpdate, TutorialUserToUpdate);
-            if (_userRepository.SaveChanges())
+            if (_entityFramework.SaveChanges() > 0)
             {
                 return Ok();
             }
@@ -181,8 +177,8 @@ public class TutorialEFController : ControllerBase
 
         if (TutorialUserToDelete != null)
         {
-            _userRepository.RemoveEntity<TutorialUserSalary>(TutorialUserToDelete);
-            if (_userRepository.SaveChanges())
+            _entityFramework.TutorialUserSalary.Remove(TutorialUserToDelete);
+            if (_entityFramework.SaveChanges() > 0)
             {
                 return Ok();
             }
@@ -203,8 +199,8 @@ public class TutorialEFController : ControllerBase
     [HttpPost("TutorialUserJobInfo")]
     public IActionResult PostTutorialUserJobInfoEf(TutorialUserJobInfo TutorialUserForInsert)
     {
-        _userRepository.AddEntity<TutorialUserJobInfo>(TutorialUserForInsert);
-        if (_userRepository.SaveChanges())
+        _entityFramework.TutorialUserJobInfo.Add(TutorialUserForInsert);
+        if (_entityFramework.SaveChanges() > 0)
         {
             return Ok();
         }
@@ -222,7 +218,7 @@ public class TutorialEFController : ControllerBase
         if (TutorialUserToUpdate != null)
         {
             _mapper.Map(TutorialUserForUpdate, TutorialUserToUpdate);
-            if (_userRepository.SaveChanges())
+            if (_entityFramework.SaveChanges() > 0)
             {
                 return Ok();
             }
@@ -241,8 +237,8 @@ public class TutorialEFController : ControllerBase
 
         if (TutorialUserToDelete != null)
         {
-            _userRepository.RemoveEntity<TutorialUserJobInfo>(TutorialUserToDelete);
-            if (_userRepository.SaveChanges())
+            _entityFramework.TutorialUserJobInfo.Remove(TutorialUserToDelete);
+            if (_entityFramework.SaveChanges() > 0)
             {
                 return Ok();
             }

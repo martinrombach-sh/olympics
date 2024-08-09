@@ -45,10 +45,10 @@ namespace OlympicsAPI.Data
                 .ToTable("Users", "TutorialAppSchema")
                 .HasKey(u => u.UserId);
             modelBuilder.Entity<TutorialUserSalary>()
-                .ToTable("Users", "TutorialAppSchema")
+                .ToTable("UserSalary", "TutorialAppSchema")
                 .HasKey(u => u.UserId); ;
             modelBuilder.Entity<TutorialUserJobInfo>()
-                .ToTable("Users", "TutorialAppSchema")
+                .ToTable("UserJobInfo", "TutorialAppSchema")
                 .HasKey(u => u.UserId);
 
             //for revisiting see csharp 71

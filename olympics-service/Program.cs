@@ -1,6 +1,8 @@
 using OlympicsAPI.Data;
 using OlympicsAPI.Models;
 
+//for project packages see olympics-service.csproj
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();

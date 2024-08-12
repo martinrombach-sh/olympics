@@ -20,7 +20,7 @@ public class TutorialController : ControllerBase
         _dapper = new DataContextDapper(config);
     }
 
-    [HttpGet("GetDate")]
+    [HttpGet("/")]
     public DateTime TutorialConnection()
     {
         return _dapper.LoadDataSingle<DateTime>("SELECT GETDATE()");

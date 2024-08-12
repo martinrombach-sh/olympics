@@ -1,6 +1,7 @@
+
 using Microsoft.AspNetCore.Mvc;
 
-namespace OlympicsAPI.Controllers
+namespace olympics_service.controllers
 {
 
     [ApiController]
@@ -12,7 +13,7 @@ namespace OlympicsAPI.Controllers
 
         }
 
-        [HttpGet("/")]
+        [HttpGet("/year")]
         //public IActionResult Test()
         public string Year(string year)
         {
@@ -21,12 +22,13 @@ namespace OlympicsAPI.Controllers
         }
 
         //Get argument example
-        [HttpGet("/{range}")]
+        [HttpGet("/year/{range}")]
         //public IActionResult Test()
         public string YearRange(string range)
         {
             string result = range;
             return result;
         }
+
     }
 }

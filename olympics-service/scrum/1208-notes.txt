@@ -1,0 +1,17 @@
+If you are in a position where you would like to use a public repo
+in simply health, fork it 
+(the project will have all the dependencies too, which helps)
+
+
+1. project initialised the same as macbook
+- should start swagger when repo is spun up
+is swagger installed?
+yes, according to the csproj file -> 
+
+solution -> trusting the server connection, removing credentials (which uses microsoft authenticator)
+swagger is available on /swagger endpoint
+
+-- added tables
+
+2. 
+

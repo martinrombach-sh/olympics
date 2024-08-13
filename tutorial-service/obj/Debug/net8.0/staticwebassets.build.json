@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "/qFDRSG3+EyDz1fBQkqIEjAyKboGah7pG7Xm0RGrvbo=",
+  "Source": "tutorial-service",
+  "BasePath": "_content/tutorial-service",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

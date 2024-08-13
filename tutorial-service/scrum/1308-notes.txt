@@ -1,0 +1,18 @@
+Note: you tried to do too much at once last time you initiated the project
+Break down the task of moving to the 'olympics/tutorial' structure
+
+1. Refactoring
+separate olympics-service into the service and a new tutorial-service
+
+2. Bug on TutorialUser in TutorialUserRepository
+Corrected: it was extra code from the next stage in the tutorial, unfinished.
+
+------------------------------------ CURRENT -------------------------------------------
+
+3. SQL error when calling via swagger (internal 500)
+
+4. Refactoring - removing 'Tutorial' from the names of the tutorial-service files
+
+5. Continue and finish tutorial + testing tutorial
+
+6. Start olympics based on tutorial 
